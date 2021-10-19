@@ -3,13 +3,13 @@ node{
   stage('SCM Checkout')
   {
     
-     git 'https://github.com/druvsingh42/myapp'
+     echo "in the checkout"
     
   }
   
     stage('Compile Package')
   {
-    sh 'mvn package'
+    echo 'in the compile'
   }
 
 
