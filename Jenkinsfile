@@ -16,6 +16,15 @@ node{
     echo 'in the install'
     sh "${mvnHome}/bin/mvn install" 
   }
+  
+   stage('SonarQube Analysis') {
+        def mvnHome = tool name: 'maven3', type: 'maven' 
+     
+     echo 'inside sonarqube the install'
+        withSonarQubeEnv('sonar-6') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    }
 
 
 }
