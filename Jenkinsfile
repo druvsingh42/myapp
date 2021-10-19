@@ -21,7 +21,7 @@ node{
         def mvnHome = tool name: 'maven3', type: 'maven' 
      
      echo 'inside sonarqube the install'
-        withSonarQubeEnv('sonar-6') { 
+        withSonarQubeEnv('sonar-8.9.2') { 
           sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     }
