@@ -12,6 +12,7 @@ node{
   
     stage('Install Package')
   {
+    def mvnHome = tool name: 'maven3', type: 'maven' 
     echo 'in the install'
     sh "${mvnHome}/bin/mvn install" 
   }
